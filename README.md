@@ -18,13 +18,17 @@ This project is a deepfake detection model built using a Convolutional Neural Ne
 
 3. Train the model:
     ```
-    python train.py
+    python src/train.py
     ```
 
-4. Check the saved model in the `models/` folder and training logs in the `logs/` folder.
+4. Evaluate the model:
+   ```
+   python src/evaluate.py
+
+4. Check the saved model in the `models/cnn_model.h5` and training logs in the `logs/training_log.txt`.
 
 ## Customization
 
 - You can modify the CNN architecture in `src/model.py` to improve performance.
-- You can adjust the training parameters (e.g., epochs, batch size) in the `train.py` script or move them to a `config.py` file for flexibility.
+- You can adjust the training parameters (e.g., epochs, batch size) in the `train.py` script or move them to `config.py` file for flexibility.
 
