@@ -1,4 +1,5 @@
 import pandas as pd
+import sys
 import cv2
 import numpy as np
 from tensorflow.keras.utils import Sequence
@@ -7,6 +8,7 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.callbacks import ModelCheckpoint
 from src.model import build_cnn
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 # Custom data generator class
 class DataGenerator(Sequence):
