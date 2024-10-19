@@ -10,6 +10,9 @@ from src.model import build_cnn
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+from google.colab import drive
+drive.mount('/content/drive')
+
 # Custom data generator class
 class DataGenerator(Sequence):
     def __init__(self, image_paths, labels, batch_size=32, target_size=(224, 224), shuffle=True):
@@ -95,7 +98,7 @@ def main():
     model = build_cnn()
 
     # Define checkpoint callback to save the best model
-    checkpoint = ModelCheckpoint('models/cnn_model.h5', monitor='val_loss', save_best_only=True)
+    checkpoint = ModelCheckpoint('/content/drive/MyDrive/models/cnn_model.keras', monitor='val_loss', save_best_only=True)
 
     # Train the model using the data generators
     history = model.fit(
