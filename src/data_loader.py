@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 def load_image(file_path, target_size=(224, 224)):
+    print(f"Attempting to load image: {file_path}")
     # Check if the file exists
     if not os.path.exists(file_path):
         print(f"Warning: {file_path} does not exist. Skipping.")
